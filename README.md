@@ -2,5 +2,5 @@
 
 # Contributers
 * Yasen Yalamov
-* Aleksander Stoilov
+* Alexander Stoilov
 * Mark Dragnev
