@@ -18,7 +18,7 @@ def scraperFunction(numberOfPosts):
                    "created": [], \
                    "body": []}
 
-    for submission in WSB.hot(limit=numberOfPosts):
+    for submission in WSB.new(limit=numberOfPosts):
         topics_dict["title"].append(submission.title)
         topics_dict["score"].append(submission.score)
         topics_dict["id"].append(submission.id)
