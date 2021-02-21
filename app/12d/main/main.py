@@ -19,3 +19,6 @@ for index, row in df_stocks.iterrows():
         if temp in row1['title']:
             print(row['stock_index'])
             print(row1['title'])
+
+df_stocks['comments'] = 0
+df_stocks['comments'] = df_stocks[(df_stocks['comments'])]
