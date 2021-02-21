@@ -10,12 +10,9 @@ df_stocks = df_stocks.rename(columns={'A': 'stock_index', 'Agilent Technologies'
 
 df_scraped = pd.DataFrame(scraperFunction(100))
 
-
 for index, row in df_stocks.iterrows():
     for index1, row1 in df_scraped.iterrows():
-        temp = " "
-        temp = temp + row['stock_index']
-        temp = temp + " "
-        if temp in row1['title']:
+        temp = row1['title'].split(" ")
+        if row['stock_index'] in temp:
             print(row['stock_index'])
             print(row1['title'])
