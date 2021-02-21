@@ -16,7 +16,9 @@ for index, row in df_stocks.iterrows():
     for index1, row1 in df_scraped.iterrows():
         temp = row1['title'].split(" ")
         temp1 = row1['body'].split(" ")
-        if (row['stock_index'] in temp) or (row['stock_index'] in temp1) or (row['stock_name'] in row1['title']) or (row['stock_name'] in row1['body']):
+        dollar_sign = "$"
+        dollar_sign += row['stock_index']
+        if (row['stock_index'] in temp) or (row['stock_index'] in temp1) or (row['stock_name'] in row1['title']) or (row['stock_name'] in row1['body']) or (dollar_sign in temp) or (dollar_sign in temp1):
             # print(row['stock_index'])
             # print(row1['title'])
 
@@ -25,4 +27,5 @@ for index, row in df_stocks.iterrows():
 
 df_stocks["nr_comments"] = ser
 
-print(df_stocks[df_stocks["nr_comments"]>0].sort_values("nr_comments", ascending=False))
+to_export = df_stocks[df_stocks["nr_comments"]>0].sort_values("nr_comments", ascending=False)
+exported = to_export.to_csv('hot_stocks.csv')
