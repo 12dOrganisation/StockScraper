@@ -3,7 +3,7 @@ import pandas as pd
 import datetime as dt
 
 
-def scaperFunction(numberOfPosts):
+def scraperFunction(numberOfPosts):
     reddit = praw.Reddit(
         client_id="qMLQNap3Yn5knA",
         client_secret="tNGtBkbwD4wOzaWszjRvDwM5_ReH6g",
