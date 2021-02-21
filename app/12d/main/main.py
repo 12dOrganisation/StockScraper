@@ -18,7 +18,9 @@ for index, row in df_stocks.iterrows():
         temp1 = row1['body'].split(" ")
         dollar_sign = "$"
         dollar_sign += row['stock_index']
-        if (row['stock_index'] in temp) or (row['stock_index'] in temp1) or (row['stock_name'] in row1['title']) or (row['stock_name'] in row1['body']) or (dollar_sign in temp) or (dollar_sign in temp1):
+        if (row['stock_index'] in (*temp, *temp1)) \
+                or (row['stock_name'] in (*row1['title'], *row1['body']))\
+                or (dollar_sign in (*temp, *temp1)):
             # print(row['stock_index'])
             # print(row1['title'])
 
